@@ -27,7 +27,6 @@ test('extract data', async({page})=>{
     const numeric = parseInt(text.replace(/[^0-9.]/g, ''))
     price.push(numeric)
     console.log('textlist:',numeric)
-    
   }
   console.log('priceList:', price)
 
