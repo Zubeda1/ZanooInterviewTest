@@ -3,11 +3,8 @@ import {test, expect} from '@playwright/test'
 test.describe('test scenario checkbox and dropdown', () => {
   test('checkbox element and dropdown select text',async({page})=>{
     await page.goto('https://rahulshettyacademy.com/AutomationPractice/')
-    const checkRadio1= await page.getByRole('radio',{name:'radioButton'})
-
-    //const checkRadio1= await page.locator('label').filter({hasText:'Radio1'}).getByRole('radio')
-    // Assert on the actual radio input element
-   checkRadio1.click()
+    const checkRadio1 = await page.locator('label').filter({hasText:'Radio1'}).getByRole('radio')
+    await checkRadio1.click()
     await expect(checkRadio1).toBeChecked()
 
     const dropdownSelect= await page.locator('#dropdown-class-example')
